@@ -13,7 +13,7 @@ This project implements and compares LSTM and GRU architectures for binary class
 ### Key Features
 
 - **Dual Architecture Comparison**: LSTM vs GRU performance analysis
-- **Comprehensive Feature Set**: 15+ macroeconomic indicators from FRED API
+- **Comprehensive Feature Set**: 22 features
 - **Robust Data Pipeline**: Automated data collection and preprocessing
 - **Advanced Model Architecture**: Batch normalization, dropout, and regularization
 - **Walk-Forward Validation**: Out-of-sample testing on 2019-2025 data
@@ -140,14 +140,14 @@ pip install pandas numpy yfinance fredapi tensorflow scikit-learn matplotlib sea
 
 ### Model Training
 - **Class Weighting**: Handles imbalanced bull/bear distribution
-- **Early Stopping**: Prevents overfitting with patience=15
+- **Early Stopping**: Prevents overfitting with patience
 - **Learning Rate Scheduling**: Adaptive learning rate reduction
 - **Regularization**: Dropout, batch normalization, and L2 penalties
 
 ### Evaluation
 - **Walk-Forward Validation**: Realistic out-of-sample testing
 - **Multiple Metrics**: Balanced accuracy, AUC-ROC for imbalanced classes
-- **Prediction Smoothing**: 5-day moving average for practical implementation
+- **Prediction Smoothing**
 - **Strategy Backtesting**: Regime-based portfolio allocation
 
 ## 📊 Visualizations
@@ -169,25 +169,15 @@ The project includes comprehensive visualizations:
 - **yfinance**: 0.2+
 - **fredapi**: 0.5+
 
-### Hardware Requirements
-- **RAM**: 8GB+ recommended
-- **Training Time**: ~10-15 minutes on modern CPU
-- **GPU**: Optional (CUDA-compatible for faster training)
-
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 📚 References
 
 - Federal Reserve Economic Data (FRED): https://fred.stlouisfed.org/
 - Yahoo Finance API: https://finance.yahoo.com/
 - TensorFlow Documentation: https://tensorflow.org/
-- Market Regime Literature: [Add relevant academic papers]
 
 ## 🙏 Acknowledgments
 
