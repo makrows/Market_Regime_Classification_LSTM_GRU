@@ -34,6 +34,8 @@ This project implements and compares LSTM and GRU architectures for binary class
 - Market sentiment indicators
 - Industrial production and capacity utilization
 
+*Note: Features are reduced to 10 principal components using PCA for model input*
+
 ### Time Periods
 - **Training**: 2000-2013 (13 years)
 - **Validation**: 2013-2019 (6 years)
@@ -43,36 +45,26 @@ This project implements and compares LSTM and GRU architectures for binary class
 
 ### LSTM Model
 ```
-Input Layer (60 timesteps, 15 features)
+Input Layer (60 timesteps, 10 features)
     ↓
-LSTM Layer (64 units, return_sequences=True)
-    ↓
-Batch Normalization + Dropout (0.2)
-    ↓
-LSTM Layer (32 units)
+LSTM Layer (64 units, return_sequences=True, dropout=0.3, recurrent_dropout=0.3)
     ↓
 Batch Normalization + Dropout (0.3)
     ↓
-Dense Layer (16 units, ReLU)
+LSTM Layer (32 units, dropout=0.3, recurrent_dropout=0.3)
     ↓
-Dropout (0.4)
+Batch Normalization + Dropout (0.3)
     ↓
-Output Layer (1 unit, Sigmoid)
+Output Layer (1 unit, Sigmoid, L2 regularization=2e-4)
 ```
 
 ### GRU Model
 ```
-Input Layer (60 timesteps, 15 features)
+Input Layer (60 timesteps, 10 features)
     ↓
-GRU Layer (32 units)
+Single GRU Layer (16 units, dropout=0.3, recurrent_dropout=0.3)
     ↓
-Batch Normalization + Dropout (0.4)
-    ↓
-Dense Layer (8 units, ReLU, L2 regularization)
-    ↓
-Dropout (0.5)
-    ↓
-Output Layer (1 unit, Sigmoid)
+Output Layer (1 unit, Sigmoid, L2 regularization=1e-4)
 ```
 
 ## 📁 Project Structure
