@@ -118,14 +118,14 @@ pip install pandas numpy yfinance fredapi tensorflow scikit-learn matplotlib sea
 
 ### Model Performance (Test Set 2019-2025)
 
-| Model | Accuracy | Precision | Recall | F1-Score | AUC-ROC |
-|-------|----------|-----------|---------|----------|---------|
-| LSTM  | 85.2%    | 0.84      | 0.86    | 0.85     | 0.91    |
-| GRU   | 83.7%    | 0.82      | 0.85    | 0.83     | 0.89    |
+| Model | Accuracy | Precision (Weighted) | Recall (Weighted) | F1-Score (Weighted) | AUC-ROC |
+|-------|----------|---------------------|-------------------|-------------------|---------|
+| LSTM  | 88.0%    | 0.88                | 0.88              | 0.88              | 0.93    |
+| GRU   | 88.0%    | 0.89                | 0.88              | 0.88              | 0.93    |
 
 ### Key Findings
 
-1. **LSTM vs GRU**: LSTM slightly outperforms GRU in regime classification
+1. **LSTM vs GRU**: Both models achieve comparable performance with GRU slightly better at bear market detection
 2. **Feature Importance**: VIX and yield curve indicators are most predictive
 3. **Prediction Stability**: Moving average smoothing improves practical applicability
 4. **Economic Validation**: Models successfully identify major regime transitions (COVID-19 crash, recovery periods)
